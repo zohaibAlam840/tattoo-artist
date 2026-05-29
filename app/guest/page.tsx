@@ -22,6 +22,50 @@ const SECTIONS = [
     image: "/images/4.jpeg",
   },
   {
+    title: "Valores + Pagamentos",
+    content: [
+      "Por se tratar de um estúdio privado, é essencial que cada tatuador seja responsável pela gestão da sua própria agenda e pelo recebimento direto dos pagamentos de seus clientes.",
+      "O pagamento da comissão pode ser feito por PIX, Transferência ou dinheiro. Pode ser feito no final da tatuagem ou semanalmente.",
+      "O estúdio oferece suporte na divulgação dos artistas por meio de postagens em nossos canais, porém isso não garante fluxo de clientes. Espera-se que cada profissional também atue ativamente na construção e manutenção da sua própria base de clientes.",
+    ],
+    image: "/images/4.jpeg",
+  },
+  {
+    title: "Comissão do Estúdio",
+    content: [],
+    bullets: [
+      "O repasse padrão é de 30% do valor total da tatuagem para o estúdio.",
+      "Taxa diária (full day) é de R$450 — válido para quem cobra valores acima de R$1.500 por tatuagem, assim não é necessário repassar o excedente nesse dia.",
+      "Semanal R$2.000 — Período de 6 dias consecutivos.",
+      "Mensal R$4.900 — Livre para fazer quantas tatuagens quiser dentro do específico mês, pagamento antecipado.",
+    ],
+  },
+  {
+    title: "O Que Fornecemos",
+    content: [
+      "Papel toalha Snob, Sabonete líquido, Bandagem, Vaselina, Fita crepe, Copo plástico descartável, Solidificador de líquidos, Tinta preta Easyglow Ultrablack, Luvas Nitrilicas P, M e G, Batoques, Protetor de Clipcord, Plástico filme PVC, Aparelho barbeador descartável, Transfer, Almotolia para álcool, Almotolia para sabão, Borrifador para sabão, Protetor de almotolia, Babador impermeável, Máscara descartável.",
+    ],
+  },
+  {
+    title: "Bancadas",
+    content: [
+      "No Quantica temos o nosso próprio aplicativo para que os artistas gerenciem suas reservas. Hoje temos 4 bancadas rotativas disponíveis.",
+      "Você precisará reservar uma bancada para os dias que deseja trabalhar. Para isso, vá até a aba \"Agenda\" e selecione \"Nova Reserva\".",
+      "Na hora da escolha da bancada existem 3 opções:",
+    ],
+    bullets: [
+      "1 — Dia completo",
+      "2 — Meio período (manhã até 13hrs)",
+      "3 — Meio período (tarde após 13hrs)",
+    ],
+    extra: [
+      "Caso a escolha seja o meio período (manhã), é de extrema importância que o artista tenha certeza que irá finalizar a tatuagem no horário para a bancada estar liberada e limpa até 13hrs.",
+      "É importante reservar com antecedência, pois as estações funcionam por ordem de chegada. Uma vez reservada, a estação será sua durante todo o dia.",
+      "Se você não for mais trabalhar em determinado dia, por favor exclua sua reserva o quanto antes para que outros artistas possam utilizar a estação.",
+      "As bancadas contêm todos os materiais necessários para montar seu espaço — caso falte algo, confira no armário de estoque.",
+    ],
+  },
+  {
     title: "Recepção e Frigobar",
     content: [
       "Área da recepção: Café de cápsula Dolce Gusto, chás, bolachas salgadas, filtro de água gelada.",
@@ -37,7 +81,7 @@ const SECTIONS = [
   {
     title: "Sala de Desenho",
     content: [
-      "Temos à disposição: impressora térmica Brother A4, impressora térmica Peripage A4, impressora térmica chinesa A4, impressora tradicional Brother a laser (preta), papel hectográfico manual, papel térmico (reutilizável) e insumos como folhas sulfite A4.",
+      "Temos à disposição: impressora térmica Brother A4, impressora térmica Peripage A4, impressora térmica chinesa A4 (necessita desenho impresso), impressora tradicional Brother a laser (preta), papel hectográfico manual, papel térmico (reutilizável) e insumos como folhas sulfite A4.",
       "Disponibilizamos micro-ondas, copos, pratos e talheres. Os clientes podem se alimentar na recepção ou na área de fumantes.",
     ],
   },
@@ -48,6 +92,31 @@ const SECTIONS = [
       "Respeite o espaço de cada um no estúdio, principalmente os clientes de outros tatuadores. Evite conversas negativas e mantenha um ambiente confortável.",
     ],
     image: "/images/3.jpeg",
+  },
+  {
+    title: "Armário dos Tatuadores",
+    content: [
+      "Devido a ser bancada rotativa, temos o armário de aço dos tatuadores que fica na sala de desenho para cada um guardar suas coisas pessoais e profissionais. Caso o tatuador queira trancar, o cadeado não é fornecido pelo estúdio.",
+    ],
+  },
+  {
+    title: "Após Finalizar",
+    content: [],
+    bullets: [
+      "Desmontar toda sua bancada e deixar livre em cima (deixar tintas/produtos/almotolias no cesto da lateral direita da bancada).",
+      "Higienizar bancada e maca após o uso com desinfetante hospitalar.",
+      "Não deixar maca com proteção após finalizar a tattoo.",
+      "Lixo infectante contaminado: retirar todo dia e descartar na Lixeira branca 1.",
+      "Descarte de agulhas no recipiente próprio (perfurocortante).",
+      "Usar solidificante de líquido para descartar os líquidos restantes.",
+      "Recolher copos, garrafas e resíduos seus e do seu cliente.",
+      "Louças, copos e todos utensílios utilizados devem ser lavados após o uso.",
+      "Em caso de ser o último ao fechar o estúdio: sempre confira iluminação, ar condicionados desligados e tranque a fechadura do meio da porta de entrada.",
+      "Não colar adesivos nas bancadas, almotolias, ou em qualquer outro lugar do estúdio.",
+      "A primeira chave do estúdio é fornecida — em caso de perda será cobrado R$200,00 para uma nova cópia.",
+      "Os artistas também devem seguir os protocolos locais de higiene.",
+    ],
+    image: "/images/WhatsApp Image 2026-05-28 at 15.30.51.jpeg",
   },
 ];
 
@@ -83,7 +152,6 @@ export default function GuestInfo() {
       {/* Sections */}
       {SECTIONS.map((section) => (
         <div key={section.title} className="mb-2">
-          {/* Section photo */}
           {section.image && (
             <div className="relative w-full" style={{ height: "200px" }}>
               <Image
@@ -93,7 +161,7 @@ export default function GuestInfo() {
                 className="object-cover"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
               <h2
                 className="absolute bottom-4 left-5 text-2xl font-light text-white"
                 style={{ fontFamily: "var(--font-cormorant)" }}
@@ -127,6 +195,13 @@ export default function GuestInfo() {
                     </li>
                   ))}
                 </ul>
+              )}
+              {"extra" in section && section.extra && (
+                <div className="mt-3 flex flex-col gap-2">
+                  {(section.extra as string[]).map((text, i) => (
+                    <p key={i} className="text-sm text-[#555] leading-relaxed">{text}</p>
+                  ))}
+                </div>
               )}
             </div>
           </div>
