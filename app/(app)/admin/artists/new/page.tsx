@@ -61,7 +61,7 @@ export default function AddArtist() {
       <div className="flex flex-col gap-4">
         {/* Role selector */}
         <div>
-          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Role</label>
+          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Função</label>
           <div className="grid grid-cols-2 gap-2">
             {["resident", "guest"].map((r) => (
               <button
@@ -83,10 +83,10 @@ export default function AddArtist() {
 
         {/* Basic info */}
         {[
-          { label: "Full Name", field: "name", type: "text", placeholder: "e.g. Leah Vickers" },
-          { label: "Instagram Handle", field: "handle", type: "text", placeholder: "@handle" },
-          { label: "Email", field: "email", type: "email", placeholder: "artist@email.com" },
-          { label: "Temporary Password", field: "password", type: "password", placeholder: "min. 6 characters" },
+          { label: "Nome Completo", field: "name", type: "text", placeholder: "ex: Leah Vickers" },
+          { label: "Instagram", field: "handle", type: "text", placeholder: "@handle" },
+          { label: "E-mail", field: "email", type: "email", placeholder: "artista@email.com" },
+          { label: "Senha Temporária", field: "password", type: "password", placeholder: "mín. 6 caracteres" },
         ].map(({ label, field, type, placeholder }) => (
           <div key={field}>
             <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">{label}</label>
@@ -103,7 +103,7 @@ export default function AddArtist() {
         {/* Station preference */}
         <div>
           <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">
-            Station Preference
+            Bancada Preferida
           </label>
           <div className="relative">
             <select
@@ -112,7 +112,7 @@ export default function AddArtist() {
               className="appearance-none w-full bg-white border border-[#D5CFC9] rounded-2xl px-4 py-3.5 pr-10 text-sm text-[#2C2C2C] outline-none"
             >
               {[1, 2, 3, 4].map((n) => (
-                <option key={n} value={String(n)}>Station {n}</option>
+                <option key={n} value={String(n)}>Bancada {n}</option>
               ))}
             </select>
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
@@ -128,7 +128,7 @@ export default function AddArtist() {
           <>
             <div>
               <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">
-                Booking Start Date
+                Início do Período
               </label>
               <input
                 type="date"
@@ -139,7 +139,7 @@ export default function AddArtist() {
             </div>
             <div>
               <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">
-                Booking End Date
+                Fim do Período
               </label>
               <input
                 type="date"
@@ -161,7 +161,7 @@ export default function AddArtist() {
         className="w-full text-white py-4 rounded-full text-base font-medium mt-8 disabled:opacity-40"
         style={{ background: "#3A4A3B" }}
       >
-        {isPending ? "Creating…" : "Save Artist"}
+        {isPending ? "Criando…" : "Salvar Artista"}
       </button>
     </main>
   );

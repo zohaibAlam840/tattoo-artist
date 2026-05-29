@@ -99,7 +99,7 @@ export default function ArtistEditForm({
             className="text-3xl font-light text-[#2C2C2C]"
             style={{ fontFamily: "var(--font-cormorant)" }}
           >
-            Edit Artist
+            Editar Artista
           </h1>
           <RoleBadge role={form.role} />
         </div>
@@ -118,7 +118,7 @@ export default function ArtistEditForm({
       {/* Profile form */}
       <div className="flex flex-col gap-4 mb-6">
         <div>
-          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Role</label>
+          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Função</label>
           <div className="grid grid-cols-3 gap-2">
             {(["resident", "guest", "admin"] as Role[]).map((r) => (
               <button
@@ -139,8 +139,8 @@ export default function ArtistEditForm({
         </div>
 
         {[
-          { label: "Full Name", field: "full_name" },
-          { label: "Instagram Handle", field: "handle" },
+          { label: "Nome Completo", field: "full_name" },
+          { label: "Instagram", field: "handle" },
         ].map(({ label, field }) => (
           <div key={field}>
             <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">{label}</label>
@@ -154,7 +154,7 @@ export default function ArtistEditForm({
         ))}
 
         <div>
-          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Station Preference</label>
+          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Bancada Preferida</label>
           <div className="relative">
             <select
               value={form.preferred_station}
@@ -162,7 +162,7 @@ export default function ArtistEditForm({
               className="appearance-none w-full bg-white border border-[#D5CFC9] rounded-2xl px-4 py-3.5 pr-10 text-sm text-[#2C2C2C] outline-none"
             >
               {[1, 2, 3, 4].map((n) => (
-                <option key={n} value={String(n)}>Station {n}</option>
+                <option key={n} value={String(n)}>Bancada {n}</option>
               ))}
             </select>
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
@@ -190,17 +190,17 @@ export default function ArtistEditForm({
         className="w-full text-white py-4 rounded-full text-base font-medium mb-8 disabled:opacity-40"
         style={{ background: "#3A4A3B" }}
       >
-        {isPending ? "Saving…" : "Save Changes"}
+        {isPending ? "Salvando…" : "Salvar Alterações"}
       </button>
 
       {/* Guest periods */}
       {(form.role === "guest" || periods.length > 0) && (
         <>
           <div className="w-full h-px bg-[#D5CFC9] mb-6" />
-          <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Booking Periods</p>
+          <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Períodos de Reserva</p>
 
           {periods.length === 0 && (
-            <p className="text-sm text-[#AAA] mb-4">No booking periods yet.</p>
+            <p className="text-sm text-[#AAA] mb-4">Nenhum período de reserva ainda.</p>
           )}
 
           {periods.map((p) => (
@@ -221,7 +221,7 @@ export default function ArtistEditForm({
           ))}
 
           <div className="mt-4 bg-white rounded-2xl px-4 py-4 shadow-sm">
-            <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Add New Period</p>
+            <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Adicionar Novo Período</p>
             <div className="flex flex-col gap-3">
               <div>
                 <label className="block text-xs text-[#888] mb-1">Start</label>
@@ -249,7 +249,7 @@ export default function ArtistEditForm({
                 className="w-full py-3 rounded-2xl text-sm font-medium disabled:opacity-40"
                 style={{ background: "#3A4A3B", color: "#fff" }}
               >
-                {isPeriodPending ? "Adding…" : "Add Period"}
+                {isPeriodPending ? "Adicionando…" : "Adicionar Período"}
               </button>
             </div>
           </div>

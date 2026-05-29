@@ -11,9 +11,9 @@ import {
 import type { BookingType, Booking } from "@/lib/types";
 
 const BOOKING_TYPES: { id: BookingType; label: string; desc: string }[] = [
-  { id: "full", label: "Full Day", desc: "All day" },
-  { id: "am",   label: "Half Day AM", desc: "Until 1:00 PM" },
-  { id: "pm",   label: "Half Day PM", desc: "After 1:00 PM" },
+  { id: "full", label: "Dia Inteiro", desc: "O dia todo" },
+  { id: "am",   label: "Manhã", desc: "Até 13h" },
+  { id: "pm",   label: "Tarde", desc: "Após 13h" },
 ];
 
 function NewBookingInner() {
@@ -115,13 +115,13 @@ function NewBookingInner() {
         className="text-3xl font-light text-[#2C2C2C] mb-1"
         style={{ fontFamily: "var(--font-cormorant)" }}
       >
-        New Booking
+        Nova Reserva
       </h1>
       <p className="text-sm text-[#888] mb-8">{formattedDate}</p>
 
       {/* Station select */}
       <div className="mb-8">
-        <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Select Station</p>
+        <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Selecionar Bancada</p>
         <div className="grid grid-cols-4 gap-3">
           {[1, 2, 3, 4].map((n) => (
             <button
@@ -142,14 +142,14 @@ function NewBookingInner() {
         </div>
         {isAdmin && profile?.preferred_station && (
           <p className="text-xs text-[#AAA] mt-2">
-            Your preferred station is {profile.preferred_station}
+            Sua bancada preferida é a {profile.preferred_station}
           </p>
         )}
       </div>
 
       {/* Booking type */}
       <div className="mb-8">
-        <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Booking Type</p>
+        <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Tipo de Reserva</p>
         <div className="flex flex-col gap-2">
           {BOOKING_TYPES.map((t) => (
             <button
@@ -183,7 +183,7 @@ function NewBookingInner() {
         >
           <div className="px-4 pt-4 pb-3">
             <p className="text-sm font-semibold mb-1" style={{ color: "#C0392B" }}>
-              Station {station} is taken
+              Bancada {station} já está ocupada
             </p>
             {conflictBooking && (
               <p className="text-xs text-[#888]">
@@ -199,7 +199,7 @@ function NewBookingInner() {
               {freeStations.length > 0 ? (
                 <>
                   <p className="text-xs text-[#888] uppercase tracking-widest mb-2">
-                    Move them to
+                    Mover para a bancada
                   </p>
                   <div className="flex gap-2 mb-3">
                     {freeStations.map((s) => (
@@ -225,8 +225,8 @@ function NewBookingInner() {
                     style={{ background: "#C0392B", color: "#fff" }}
                   >
                     {isPending
-                      ? "Reassigning…"
-                      : `Move them to Station ${reassignTo ?? "?"} & take Station ${station}`}
+                      ? "Realocando…"
+                      : `Mover para Bancada ${reassignTo ?? "?"} e reservar Bancada ${station}`}
                   </button>
                 </>
               ) : (
@@ -261,7 +261,7 @@ function NewBookingInner() {
           className="w-full text-white py-4 rounded-full text-base font-medium disabled:opacity-40 transition-opacity"
           style={{ background: "#3A4A3B" }}
         >
-          {checking || isPending ? "Checking…" : "Confirm Booking"}
+          {checking || isPending ? "Verificando…" : "Confirmar Reserva"}
         </button>
       )}
     </main>

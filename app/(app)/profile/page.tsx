@@ -77,7 +77,7 @@ export default function Profile() {
             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="#555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          <span className="text-[#2C2C2C] text-sm font-medium">Edit Profile</span>
+          <span className="text-[#2C2C2C] text-sm font-medium">Editar Perfil</span>
         </Link>
 
         <Link
@@ -88,7 +88,7 @@ export default function Profile() {
             <circle cx="12" cy="12" r="3" stroke="#555" strokeWidth="1.5"/>
             <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#555" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
-          <span className="text-[#2C2C2C] text-sm font-medium">Preferences</span>
+          <span className="text-[#2C2C2C] text-sm font-medium">Preferências</span>
         </Link>
 
         {/* Mobile-only logout (desktop has TopNav logout) */}
@@ -101,7 +101,7 @@ export default function Profile() {
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="#C0392B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           <span className="text-sm font-medium" style={{ color: "#C0392B" }}>
-            {isPending ? "Signing out…" : "Log Out"}
+            {isPending ? "Saindo…" : "Sair"}
           </span>
         </button>
       </div>

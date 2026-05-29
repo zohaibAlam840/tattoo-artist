@@ -16,7 +16,7 @@ const STATIONS = [
 const SVG_W = 624.91;
 const SVG_H = 1230.36;
 
-const TYPE_LABELS: Record<string, string> = { full: "Full Day", am: "AM — Until 1pm", pm: "PM — After 1pm" };
+const TYPE_LABELS: Record<string, string> = { full: "Dia Inteiro", am: "Manhã — Até 13h", pm: "Tarde — Após 13h" };
 
 function addDays(date: Date, days: number) {
   const d = new Date(date); d.setDate(d.getDate() + days); return d;
@@ -49,7 +49,7 @@ function ArtistSheet({ booking, station, onClose }: { booking: Booking | null; s
         {/* Handle */}
         <div className="w-10 h-1 rounded-full bg-[#D5CFC9] mx-auto mb-5" />
 
-        <p className="text-xs text-[#888] uppercase tracking-widest mb-4">Station {station}</p>
+        <p className="text-xs text-[#888] uppercase tracking-widest mb-4">Bancada {station}</p>
 
         {booking && name ? (
           <div className="flex items-center gap-4">
@@ -93,9 +93,9 @@ function ArtistSheet({ booking, station, onClose }: { booking: Booking | null; s
             </div>
             <div>
               <p className="text-xl font-semibold text-[#2C2C2C]" style={{ fontFamily: "var(--font-cormorant)" }}>
-                Available
+                Disponível
               </p>
-              <p className="text-sm text-[#AAA]">No booking for this date</p>
+              <p className="text-sm text-[#AAA]">Sem reserva nesta data</p>
             </div>
           </div>
         )}
@@ -105,7 +105,7 @@ function ArtistSheet({ booking, station, onClose }: { booking: Booking | null; s
           className="w-full mt-6 py-3.5 rounded-full text-sm font-medium"
           style={{ background: "#fff", color: "#2C2C2C", border: "1.5px solid #D5CFC9" }}
         >
-          Close
+          Fechar
         </button>
       </div>
     </>
@@ -137,7 +137,7 @@ export default function MapPage() {
         className="text-3xl font-light text-center text-[#2C2C2C] mb-4"
         style={{ fontFamily: "var(--font-cormorant)" }}
       >
-        Studio Map
+        Mapa do Estúdio
       </h1>
       <div className="w-full h-px bg-[#D5CFC9] mb-6" />
 
@@ -221,13 +221,13 @@ export default function MapPage() {
       <div className="flex items-center gap-4 justify-center mt-4">
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded-full" style={{ background: "#3A4A3B" }} />
-          <span className="text-xs text-[#888]">Occupied</span>
+          <span className="text-xs text-[#888]">Ocupada</span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded-full border" style={{ background: "#F0EDE9", borderColor: "#B5AFA9" }} />
           <span className="text-xs text-[#888]">Available</span>
         </div>
-        <span className="text-xs text-[#BBB]">Tap a station for details</span>
+        <span className="text-xs text-[#BBB]">Toque em uma bancada para ver detalhes</span>
       </div>
 
       {/* Artist detail sheet */}

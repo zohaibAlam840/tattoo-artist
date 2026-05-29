@@ -74,7 +74,7 @@ export default function EditProfile() {
         className="text-3xl font-light text-[#2C2C2C] mb-8"
         style={{ fontFamily: "var(--font-cormorant)" }}
       >
-        Edit Profile
+        Editar Perfil
       </h1>
 
       {/* Avatar */}
@@ -114,7 +114,7 @@ export default function EditProfile() {
           className="text-sm font-medium"
           style={{ color: "#3A4A3B" }}
         >
-          {avatarPreview ? "Change photo" : "Add photo"}
+          {avatarPreview ? "Alterar foto" : "Adicionar foto"}
         </button>
         <input
           ref={fileRef}
@@ -127,8 +127,8 @@ export default function EditProfile() {
 
       <div className="flex flex-col gap-4">
         {[
-          { label: "Full Name", field: "name" },
-          { label: "Instagram Handle", field: "handle" },
+          { label: "Nome Completo", field: "name" },
+          { label: "Instagram", field: "handle" },
         ].map(({ label, field }) => (
           <div key={field}>
             <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">{label}</label>
@@ -150,7 +150,7 @@ export default function EditProfile() {
         className="w-full text-white py-4 rounded-full text-base font-medium mt-8 disabled:opacity-40"
         style={{ background: "#3A4A3B" }}
       >
-        {uploading ? "Uploading photo…" : isPending ? "Saving…" : "Save Changes"}
+        {uploading ? "Enviando foto…" : isPending ? "Salvando…" : "Salvar Alterações"}
       </button>
     </main>
   );

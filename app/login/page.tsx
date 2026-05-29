@@ -23,23 +23,23 @@ export default function Login() {
         <Monogram size={72} />
         <h1
           className="text-center text-[#2C2C2C] leading-none mt-3"
-          style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.4rem", fontWeight: 300 }}
+          style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.4rem", fontWeight: 300, letterSpacing: "0.08em" }}
         >
-          LA MAISON<br />DES ARTISTES
+          QUANTICA
         </h1>
         <p className="text-[10px] tracking-[0.28em] text-[#888] mt-2 uppercase">Tattoo Studio</p>
       </div>
 
       <form onSubmit={handleSubmit} className="w-full max-w-sm flex flex-col gap-4">
         <div>
-          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Email</label>
+          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">E-mail</label>
           <input
-            name="email" type="email" required placeholder="you@example.com"
+            name="email" type="email" required placeholder="seu@email.com"
             className="w-full bg-white border border-[#D5CFC9] rounded-2xl px-4 py-3.5 text-sm text-[#2C2C2C] outline-none focus:border-[#3A4A3B]"
           />
         </div>
         <div>
-          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Password</label>
+          <label className="block text-xs text-[#888] mb-1.5 uppercase tracking-widest">Senha</label>
           <input
             name="password" type="password" required placeholder="••••••••"
             className="w-full bg-white border border-[#D5CFC9] rounded-2xl px-4 py-3.5 text-sm text-[#2C2C2C] outline-none focus:border-[#3A4A3B]"
@@ -53,7 +53,7 @@ export default function Login() {
           className="w-full text-white py-4 rounded-full text-base font-medium mt-2 disabled:opacity-60"
           style={{ background: "#3A4A3B" }}
         >
-          {isPending ? "Signing in…" : "Sign In"}
+          {isPending ? "Entrando…" : "Entrar"}
         </button>
       </form>
     </main>

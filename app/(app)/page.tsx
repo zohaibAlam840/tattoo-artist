@@ -17,12 +17,10 @@ export default function Home() {
             fontFamily: "var(--font-cormorant)",
             fontSize: "clamp(2.6rem, 11vw, 3.4rem)",
             fontWeight: 300,
-            letterSpacing: "0.02em",
+            letterSpacing: "0.08em",
           }}
         >
-          LA MAISON
-          <br />
-          DES ARTISTES
+          QUANTICA
         </h1>
         <p
           className="text-[#2C2C2C] mt-2 tracking-[0.28em] text-xs uppercase"
@@ -35,21 +33,22 @@ export default function Home() {
       {/* Studio photo */}
       <div className="relative flex-1 mt-5 mb-4 rounded-2xl overflow-hidden" style={{ minHeight: "260px" }}>
         <Image
-          src="/studio.jpg"
-          alt="La Maison des Artistes studio"
+          src="/images/WhatsApp Image 2026-05-28 at 15.30.59.jpeg"
+          alt="Quantica Tattoo Studio"
           fill
           className="object-cover"
           priority
+          unoptimized
         />
       </div>
 
-      {/* Guest Artist Info button */}
+      {/* Info button */}
       <Link
         href="/guest"
         className="block w-full text-center text-white py-4 rounded-full text-base font-medium"
         style={{ background: "#3A4A3B", fontFamily: "var(--font-dm-sans)" }}
       >
-        Guest Artist Info
+        Informações do Estúdio
       </Link>
     </main>
   );

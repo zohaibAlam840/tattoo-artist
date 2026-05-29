@@ -74,22 +74,22 @@ export default async function AdminDashboard() {
 
       {/* Stats */}
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <StatCard label="Resident Artists" value={residentCount ?? 0} />
-        <StatCard label="Guest Artists" value={guestCount ?? 0} />
-        <StatCard label="Today's Bookings" value={(todayBookings ?? []).length} />
-        <StatCard label="Free Stations" value={freeCount} />
+        <StatCard label="Artistas Residentes" value={residentCount ?? 0} />
+        <StatCard label="Artistas Convidados" value={guestCount ?? 0} />
+        <StatCard label="Reservas Hoje" value={(todayBookings ?? []).length} />
+        <StatCard label="Bancadas Livres" value={freeCount} />
       </div>
 
       {/* Quick actions */}
-      <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Manage</p>
+      <p className="text-xs text-[#888] uppercase tracking-widest mb-3">Gerenciar</p>
       <div className="flex flex-col gap-3">
         <Link
           href="/admin/artists"
           className="flex items-center justify-between bg-white rounded-2xl px-5 py-4 shadow-sm"
         >
           <div>
-            <p className="font-medium text-sm text-[#2C2C2C]">Artists</p>
-            <p className="text-xs text-[#888] mt-0.5">Manage roles &amp; assignments</p>
+            <p className="font-medium text-sm text-[#2C2C2C]">Artistas</p>
+            <p className="text-xs text-[#888] mt-0.5">Gerenciar funções e bancadas</p>
           </div>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M9 5l7 7-7 7" stroke="#888" strokeWidth="2" strokeLinecap="round" />
@@ -100,8 +100,8 @@ export default async function AdminDashboard() {
           className="flex items-center justify-between bg-white rounded-2xl px-5 py-4 shadow-sm"
         >
           <div>
-            <p className="font-medium text-sm text-[#2C2C2C]">Schedule</p>
-            <p className="text-xs text-[#888] mt-0.5">View &amp; reassign station bookings</p>
+            <p className="font-medium text-sm text-[#2C2C2C]">Agenda</p>
+            <p className="text-xs text-[#888] mt-0.5">Ver e realocar reservas de bancadas</p>
           </div>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M9 5l7 7-7 7" stroke="#888" strokeWidth="2" strokeLinecap="round" />
@@ -112,8 +112,8 @@ export default async function AdminDashboard() {
           className="flex items-center justify-between bg-white rounded-2xl px-5 py-4 shadow-sm"
         >
           <div>
-            <p className="font-medium text-sm text-[#2C2C2C]">Add Artist</p>
-            <p className="text-xs text-[#888] mt-0.5">Register a new resident or guest</p>
+            <p className="font-medium text-sm text-[#2C2C2C]">Adicionar Artista</p>
+            <p className="text-xs text-[#888] mt-0.5">Cadastrar novo residente ou convidado</p>
           </div>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M9 5l7 7-7 7" stroke="#888" strokeWidth="2" strokeLinecap="round" />

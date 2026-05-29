@@ -1,16 +1,16 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Monogram from "./Monogram";
 import { useAuth } from "@/contexts/AuthContext";
 import { logoutAction } from "@/app/actions/auth";
 import { useTransition } from "react";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/schedule", label: "Schedule" },
-  { href: "/map", label: "Map" },
-  { href: "/profile", label: "Profile" },
+  { href: "/", label: "Início" },
+  { href: "/schedule", label: "Agenda" },
+  { href: "/map", label: "Mapa" },
+  { href: "/profile", label: "Perfil" },
 ];
 
 export default function TopNav() {
@@ -29,8 +29,11 @@ export default function TopNav() {
     >
       <Link href="/" className="flex items-center gap-3">
         <Monogram size={36} />
-        <span className="text-[#2C2C2C]" style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem", fontWeight: 400, letterSpacing: "0.05em" }}>
-          LA MAISON DES ARTISTES
+        <span
+          className="text-[#2C2C2C]"
+          style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem", fontWeight: 400, letterSpacing: "0.1em" }}
+        >
+          QUANTICA
         </span>
       </Link>
 
@@ -49,16 +52,20 @@ export default function TopNav() {
         {profile?.role === "admin" && (
           <Link href="/admin"
             className="px-4 py-2 rounded-xl text-sm font-medium transition-colors"
-            style={{ background: pathname.startsWith("/admin") ? "#3A4A3B" : "transparent", color: pathname.startsWith("/admin") ? "#fff" : "#555" }}
+            style={{
+              background: pathname.startsWith("/admin") ? "#3A4A3B" : "transparent",
+              color: pathname.startsWith("/admin") ? "#fff" : "#555",
+            }}
           >
             Admin
           </Link>
         )}
         <button
-          onClick={handleLogout} disabled={isPending}
+          onClick={handleLogout}
+          disabled={isPending}
           className="ml-4 px-4 py-2 rounded-xl text-sm font-medium border border-[#D5CFC9] text-[#555] hover:border-[#3A4A3B] hover:text-[#3A4A3B] transition-colors disabled:opacity-50"
         >
-          {isPending ? "…" : "Log out"}
+          {isPending ? "…" : "Sair"}
         </button>
       </nav>
     </header>

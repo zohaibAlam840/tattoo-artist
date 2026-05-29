@@ -4,16 +4,16 @@ import Link from "next/link";
 import { getBookingsForDateAction } from "@/app/actions/bookings";
 import type { Booking, StationSlot } from "@/lib/types";
 
-const DAYS = ["M", "T", "W", "T", "F", "S", "S"];
-const MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const DAYS = ["S", "T", "Q", "Q", "S", "S", "D"];
+const MONTH_NAMES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 
 function getDaysInMonth(y: number, m: number) { return new Date(y, m + 1, 0).getDate(); }
 function getFirstDayOffset(y: number, m: number) { return (new Date(y, m, 1).getDay() + 6) % 7; }
 
 const TYPE_COLORS: Record<string, { bg: string; text: string; label: string }> = {
-  full: { bg: "#3A4A3B", text: "#fff",     label: "Full Day" },
-  am:   { bg: "#D4E8D6", text: "#2C2C2C",  label: "AM" },
-  pm:   { bg: "#D4E0EA", text: "#2C2C2C",  label: "PM" },
+  full: { bg: "#3A4A3B", text: "#fff",     label: "Dia Inteiro" },
+  am:   { bg: "#D4E8D6", text: "#2C2C2C",  label: "Manhã" },
+  pm:   { bg: "#D4E0EA", text: "#2C2C2C",  label: "Tarde" },
 };
 
 function buildSlots(bookings: Booking[]): StationSlot[] {
@@ -66,7 +66,7 @@ export default function Schedule() {
     <main className="min-h-screen pb-4" style={{ background: "#EAE5DF", fontFamily: "var(--font-dm-sans)" }}>
       <div className="px-5 pt-10 pb-4">
         <h1 className="text-3xl font-light text-center text-[#2C2C2C] mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>
-          Your Schedule
+          Agenda
         </h1>
         <div className="w-full h-px bg-[#D5CFC9]" />
       </div>
@@ -113,7 +113,7 @@ export default function Schedule() {
           className="block w-full text-center text-white py-4 rounded-full text-base font-medium"
           style={{ background: "#3A4A3B" }}
         >
-          New Booking
+          Nova Reserva
         </Link>
       </div>
 
@@ -125,14 +125,14 @@ export default function Schedule() {
           slots.map((slot) => (
             <div key={slot.station} className="bg-white rounded-2xl shadow-sm overflow-hidden">
               <div className="px-4 pt-3 pb-1">
-                <p className="text-xs text-[#999] uppercase tracking-widest">Station {slot.station}</p>
+                <p className="text-xs text-[#999] uppercase tracking-widest">Bancada {slot.station}</p>
               </div>
               {slot.full ? (
                 <BookingRow booking={slot.full} />
               ) : (
                 <>
-                  {slot.am  ? <BookingRow booking={slot.am}  /> : <EmptyRow label="AM — Available" />}
-                  {slot.pm  ? <BookingRow booking={slot.pm}  /> : <EmptyRow label="PM — Available" />}
+                  {slot.am  ? <BookingRow booking={slot.am}  /> : <EmptyRow label="Manhã — Disponível" />}
+                  {slot.pm  ? <BookingRow booking={slot.pm}  /> : <EmptyRow label="Tarde — Disponível" />}
                 </>
               )}
               {!slot.full && !slot.am && !slot.pm && null}

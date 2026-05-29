@@ -50,13 +50,13 @@ export default function Settings() {
         className="text-3xl font-light text-center text-[#2C2C2C] mb-6"
         style={{ fontFamily: "var(--font-cormorant)" }}
       >
-        Your Preferences
+        Preferências
       </h1>
 
       <div className="w-full h-px bg-[#D5CFC9] mb-8" />
 
       <div className="flex items-center justify-between mb-8">
-        <label className="text-sm text-[#555]">Station Preference</label>
+        <label className="text-sm text-[#555]">Bancada Preferida</label>
         <div className="relative">
           <select
             value={station}
@@ -65,7 +65,7 @@ export default function Settings() {
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             {[1, 2, 3, 4].map((n) => (
-              <option key={n} value={String(n)}>Station {n}</option>
+              <option key={n} value={String(n)}>Bancada {n}</option>
             ))}
           </select>
           <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
@@ -85,7 +85,7 @@ export default function Settings() {
         className="w-full text-white py-4 rounded-full text-base font-medium disabled:opacity-60"
         style={{ background: "#3A4A3B" }}
       >
-        {isPending ? "Saving…" : "Save Changes"}
+        {isPending ? "Salvando…" : "Salvar Alterações"}
       </button>
     </main>
   );
