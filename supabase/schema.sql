@@ -105,7 +105,7 @@ create policy "bookings: admin update"   on bookings for update to authenticated
 insert into profiles (id, email, full_name, handle, role, preferred_station)
 values (
   '9ea4705a-7343-4855-b3db-3b86567710e9',
-  'admin@lamaison.com',
+  'renatovision23@gmail.com',
   'Admin',
   '@admin',
   'admin',

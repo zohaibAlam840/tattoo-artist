@@ -1,9 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "La Maison des Artistes",
+  title: "Quantica Tattoo",
   description: "Tattoo Studio Management",
+  applicationName: "Quantica Tattoo",
+  appleWebApp: {
+    capable: true,
+    title: "Quantica",
+    statusBarStyle: "default",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2C2C2C",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

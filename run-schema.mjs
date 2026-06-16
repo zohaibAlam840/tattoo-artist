@@ -31,7 +31,7 @@ try {
   console.log("✓ Schema applied successfully!");
   console.log("✓ Admin profile inserted.");
   console.log("\nYou can now log in with:");
-  console.log("  Email:    admin@lamaison.com");
+  console.log("  Email:    renatovision23@gmail.com");
   console.log("  Password: Admin@2026!");
 } catch (err) {
   console.error("Error:", err.message);
