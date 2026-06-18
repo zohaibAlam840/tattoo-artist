@@ -29,7 +29,7 @@ export default function TopNav() {
       style={{ height: "64px", background: "#EAE5DF" }}
     >
       <Link href="/" className="flex items-center gap-3">
-        <Monogram size={46} />
+        <Monogram size={86} />
         <Wordmark width={150} />
       </Link>
 
