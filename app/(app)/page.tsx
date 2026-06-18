@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Monogram from "@/components/Monogram";
+import Wordmark from "@/components/Wordmark";
 
 export default function Home() {
   return (
@@ -10,24 +11,10 @@ export default function Home() {
     >
       {/* Logo */}
       <div className="flex flex-col items-center pt-4 pb-2">
-        <Monogram size={120} />
-        <h1
-          className="text-center text-[#2C2C2C] leading-none mt-3"
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            fontSize: "clamp(2.6rem, 11vw, 3.4rem)",
-            fontWeight: 300,
-            letterSpacing: "0.08em",
-          }}
-        >
-          QUANTICA
-        </h1>
-        <p
-          className="text-[#2C2C2C] mt-2 tracking-[0.28em] text-xs uppercase"
-          style={{ fontFamily: "var(--font-dm-sans)" }}
-        >
-          Tattoo Studio
-        </p>
+        <Monogram size={140} />
+        <div className="mt-4">
+          <Wordmark width={260} />
+        </div>
       </div>
 
       {/* Studio photo */}

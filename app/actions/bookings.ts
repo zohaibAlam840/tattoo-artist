@@ -143,6 +143,42 @@ export async function reassignAndBookAction(data: {
   return { success: true };
 }
 
+// ---- Admin: move a booking to a different station ----
+export async function updateBookingStationAction(bookingId: string, newStation: number) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return { error: "Unauthorized" };
+
+  const { data: profile } = await supabase
+    .from("profiles").select("role").eq("id", user.id).single();
+  if (profile?.role !== "admin") return { error: "Admin only." };
+
+  const { data: booking } = await supabase
+    .from("bookings")
+    .select("booking_date, booking_type, station")
+    .eq("id", bookingId)
+    .single();
+  if (!booking) return { error: "Booking not found." };
+  if (booking.station === newStation) return { success: true };
+
+  // Make sure the target station is free for this date + slot type
+  const { available } = await checkAvailabilityAction(
+    newStation, booking.booking_date, booking.booking_type
+  );
+  if (!available) return { error: `Bancada ${newStation} já está ocupada.` };
+
+  const { error } = await supabase
+    .from("bookings")
+    .update({ station: newStation, updated_at: new Date().toISOString() })
+    .eq("id", bookingId);
+
+  if (error) return { error: error.message };
+
+  revalidatePath("/schedule");
+  revalidatePath("/map");
+  return { success: true };
+}
+
 // ---- Delete a booking ----
 export async function deleteBookingAction(bookingId: string) {
   const supabase = await createClient();

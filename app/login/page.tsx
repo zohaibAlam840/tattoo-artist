@@ -1,6 +1,7 @@
 "use client";
 import { useState, useTransition } from "react";
 import Monogram from "@/components/Monogram";
+import Wordmark from "@/components/Wordmark";
 import { loginAction } from "@/app/actions/auth";
 
 export default function Login() {
@@ -20,14 +21,10 @@ export default function Login() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6" style={{ background: "#EAE5DF" }}>
       <div className="flex flex-col items-center mb-10">
-        <Monogram size={130} />
-        <h1
-          className="text-center text-[#2C2C2C] leading-none mt-3"
-          style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.4rem", fontWeight: 300, letterSpacing: "0.08em" }}
-        >
-          QUANTICA
-        </h1>
-        <p className="text-[10px] tracking-[0.28em] text-[#888] mt-2 uppercase">Tattoo Studio</p>
+        <Monogram size={180} />
+        <div className="mt-4">
+          <Wordmark width={240} />
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="w-full max-w-sm flex flex-col gap-4">

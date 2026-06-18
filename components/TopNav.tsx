@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Monogram from "./Monogram";
+import Wordmark from "./Wordmark";
 import { useAuth } from "@/contexts/AuthContext";
 import { logoutAction } from "@/app/actions/auth";
 import { useTransition } from "react";
@@ -28,13 +29,8 @@ export default function TopNav() {
       style={{ height: "64px", background: "#EAE5DF" }}
     >
       <Link href="/" className="flex items-center gap-3">
-        <Monogram size={36} />
-        <span
-          className="text-[#2C2C2C]"
-          style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem", fontWeight: 400, letterSpacing: "0.1em" }}
-        >
-          QUANTICA
-        </span>
+        <Monogram size={46} />
+        <Wordmark width={150} />
       </Link>
 
       <nav className="flex items-center gap-1">
